@@ -1,0 +1,8 @@
+.input_area {
+    display: inline;
+}
+
+#food_data {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Food List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="./styles/list.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+
+<body>
+    <div class="input_area">
+        <input type="text" id="messageInput" placeholder="輸入訊息" />
+        <button onclick="sendMessage()">發送</button>
+    </div>
+    <div id="food_data"></div>
+</body>
+
+<!-- import firebase info -->
+<script src="./scripts/env.js"></script>
+<!-- import spin_data functions -->
+<script src="./scripts/food_list.js"></script>
+
+</html>

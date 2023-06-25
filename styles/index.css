@@ -1,0 +1,22 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Styles for PC */
+/* @media only screen and (min-width: 1024px) {} */
+
+/* Styles for mobile */
+/* @media only screen and (max-width: 1023px) {} */
