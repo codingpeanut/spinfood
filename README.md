@@ -5,4 +5,4 @@
 
 這裡也不是很知道要拿來做什麼  
 總之先寫個筆記ㄅ  
-1. markdown [Markdown語法](https://markdown.com.cn/basic-syntax/){:target="_blank"}
+1. markdown [Markdown語法](https://markdown.com.cn/basic-syntax/)
