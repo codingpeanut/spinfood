@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Food Wheel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="./styles/spin.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="plate">
+            <div id="chart"></div>
+            <div id="message">
+                <h1></h1>
+            </div>
+        </div>
+        <div id="latest_data">
+            <h1>資料</h1>
+        </div>
+    </div>
+    <!-- import firebase info -->
+    <script src="./scripts/env.js"></script>
+    <!-- import spin_data functions -->
+    <script src="./scripts/spin_data.js"></script>
+    <script src="./scripts/spin_plate.js" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,3 +1,5 @@
+// in foodwheel.html
+
 firebase.initializeApp(firebaseConfig);
 
 // food_list

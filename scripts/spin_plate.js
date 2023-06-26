@@ -1,3 +1,5 @@
+// in foodwheel.html
+
 var w = document.getElementById("chart").offsetWidth,
     h = w,
     r = Math.min(w, h) / 2,
