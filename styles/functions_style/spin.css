@@ -1,0 +1,117 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+:root {
+    --mobile-message-height: 20%;
+}
+
+/* Styles for PC */
+@media only screen and (min-width: 651px) {
+    text {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        pointer-events: none;
+    }
+
+    .plate {
+        /* padding-top: 5%; */
+        width: 100%;
+        display: flex;
+        /* height: -webkit-fill-available; */
+        /* height: fit-content; */
+    }
+
+    #chart {
+        width: 50%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* width: 500px;
+        height: 500px; */
+        /* top: 0;
+        left: 0; */
+    }
+
+    #message {
+        display: flex;
+        width: calc(50% - 4%);
+        height: auto;
+        margin-left: 2%;
+        margin-right: 2%;
+        justify-content: center;
+    }
+
+    #message h1 {
+        font-size: 3.1rem;
+        font-weight: bold;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #latest_data {
+        width: 100%;
+        height: -webkit-fill-available;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Styles for mobile */
+@media only screen and (max-width: 650px) {
+    text {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 0.7rem;
+        pointer-events: none;
+    }
+
+    .plate {
+        /* padding-top: 5%; */
+        width: 100%;
+        height: -webkit-fill-available;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* height: fit-content; */
+    }
+
+    #chart {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #message {
+        display: flex;
+        justify-content: center;
+        width: calc(100% - 4%);
+        height: var(--mobile-message-height);
+        margin-top: 2%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    #message h1 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    #latest_data {
+        width: 100%;
+        height: -webkit-fill-available;
+        display: flex;
+        flex-direction: column;
+    }
+}

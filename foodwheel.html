@@ -1,32 +1,73 @@
-<html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>Food Wheel</title>
+    <link href="./styles/pages_style/page_style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link href="./styles/spin.css" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
 </head>
 
 <body>
-    <div class="content">
-        <div class="plate">
-            <div id="chart"></div>
-            <div id="message">
-                <h1></h1>
+    <div class="phone">
+        <header class="header">
+            <div class="header-logo">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </div>
-        <div id="latest_data">
-            <h1>資料</h1>
-        </div>
-    </div>
-    <!-- import firebase info -->
-    <script src="./scripts/env.js"></script>
-    <!-- import spin_data functions -->
-    <script src="./scripts/spin_data.js"></script>
-    <script src="./scripts/spin_plate.js" charset="utf-8"></script>
-</body>
+            <div class="header-title">
+                Home
+            </div>
+            <div class="header-buttons">
+                <button class="notifications">
+                    <i class="ai-bell"></i>
+                </button>
+                <button class="avatar">
+                    <!-- <img src="https://assets.codepen.io/285131/pexels-photo-838875.jpeg" /> -->
+                </button>
+            </div>
+        </header>
 
-</html>
+
+        <!-- content start -->
+        <div class="content">
+            <link href="./styles/functions_style/spin.css" rel="stylesheet">
+            <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+            <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+            <div class="plate">
+                <div id="chart"></div>
+                <div id="message">
+                    <h1></h1>
+                </div>
+            </div>
+            <div id="latest_data">
+                <h1>資料</h1>
+            </div>
+            <!-- import firebase info -->
+            <script src="./scripts/env.js"></script>
+            <!-- import spin_data functions -->
+            <script src="./scripts/spin_data.js"></script>
+            <script src="./scripts/spin_plate.js" charset="utf-8"></script>
+        </div>
+        <!-- content end -->
+
+
+        <footer class="menu">
+            <div class="menu-inner">
+                <a href="./" class="menu-item">
+                    <i class="ai-home"></i>
+                </a>
+                <a href="./foodlist.html" class="menu-item">
+                    <i class="ai-heart"></i>
+                </a>
+                <a href="./foodwheel.html" class="menu-item active">
+                    <i class="ai-fire"></i>
+                </a>
+                <!-- <a href="#" class="menu-item">
+                    <i class="ai-gear"></i>
+                </a> -->
+            </div>
+        </footer>
+    </div>
+</body>

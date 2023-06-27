@@ -43,7 +43,7 @@ function createFoodElement(key, restaurant_name) {
     var foodElement = document.createElement("div");
     foodElement.setAttribute("id", key);
     // foodElement.setAttribute("style", "display: inline-flex; width: 100%; justify-content: space-between;");
-    foodElement.setAttribute("style", "display: grid; grid-template-columns: 75% 25%;");
+    foodElement.setAttribute("style", "display: grid; grid-template-columns: auto auto; margin-bottom: 1rem;");
 
     // restaurant label
     var foodLabel = document.createElement("div");
@@ -53,19 +53,23 @@ function createFoodElement(key, restaurant_name) {
 
     // operation area
     var modifyElement = document.createElement("div");
-    modifyElement.setAttribute("style", "display: inline-flex; align-items: center;")
+    modifyElement.setAttribute("style", "display: inline-flex; align-items: center; justify-content: flex-end;");
+
     // delete button
     var deleteFoodButton = document.createElement("button");
     deleteFoodButton.innerText = "刪除";
     deleteFoodButton.setAttribute("class", "delete");
-    deleteFoodButton.setAttribute("style", "width: 50%;");
     deleteFoodButton.setAttribute("onclick", "deleteFood(\"" + key + "\")");
+    // deleteFoodButton.setAttribute("style", "width: 50%;");
+
     // modify button
     var editFoodButton = document.createElement("button");
     editFoodButton.innerText = "修改";
     editFoodButton.setAttribute("class", "modify");
-    editFoodButton.setAttribute("style", "width: 50%;");
     editFoodButton.setAttribute("onclick", "editFood(\"" + key + "\")");
+    // editFoodButton.setAttribute("style", "width: 50%;");
+
+    // append delete and modify button to operation area
     modifyElement.append(deleteFoodButton, editFoodButton);
     foodElement.append(modifyElement);
 

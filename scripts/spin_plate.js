@@ -153,7 +153,7 @@ function updatePieChart(data) { // on get new data
                 d3.select(".slice:nth-child(" + (picked + 1) + ") path")
                     .attr("fill", "#111");
                 //populate question
-                d3.select("#question h1")
+                d3.select("#message h1")
                     .text(data[picked].message);
                 oldrotation = rotation;
 

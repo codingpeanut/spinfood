@@ -1,26 +1,69 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>Food List</title>
+    <link href="./styles/pages_style/page_style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link href="./styles/list.css" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
 </head>
 
 <body>
-    <div class="input_area">
-        <input type="text" id="messageInput" placeholder="輸入訊息" />
-        <button onclick="sendMessage()">發送</button>
+    <div class="phone">
+        <header class="header">
+            <div class="header-logo">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="header-title">
+                Home
+            </div>
+            <div class="header-buttons">
+                <button class="notifications">
+                    <i class="ai-bell"></i>
+                </button>
+                <button class="avatar">
+                    <!-- <img src="https://assets.codepen.io/285131/pexels-photo-838875.jpeg" /> -->
+                </button>
+            </div>
+        </header>
+
+
+        <!-- content start -->
+        <div class="content">
+            <link href="./styles/functions_style/list.css" rel="stylesheet">
+            <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+            <!-- import firebase info -->
+            <script src="./scripts/env.js"></script>
+            <!-- import spin_data functions -->
+            <script src="./scripts/food_list.js"></script>
+            <div class="input_area">
+                <input type="text" id="messageInput" placeholder="輸入訊息" />
+                <div>
+                    <button onclick="sendMessage()">發送</button>
+                </div>
+            </div>
+            <div id="food_data"></div>
+        </div>
+        <!-- content end -->
+
+
+        <footer class="menu">
+            <div class="menu-inner">
+                <a href="./" class="menu-item">
+                    <i class="ai-home"></i>
+                </a>
+                <a href="./foodlist.html" class="menu-item active">
+                    <i class="ai-heart"></i>
+                </a>
+                <a href="./foodwheel.html" class="menu-item">
+                    <i class="ai-fire"></i>
+                </a>
+                <!-- <a href="#" class="menu-item">
+                    <i class="ai-gear"></i>
+                </a> -->
+            </div>
+        </footer>
     </div>
-    <div id="food_data"></div>
 </body>
-
-<!-- import firebase info -->
-<script src="./scripts/env.js"></script>
-<!-- import spin_data functions -->
-<script src="./scripts/food_list.js"></script>
-
-</html>
