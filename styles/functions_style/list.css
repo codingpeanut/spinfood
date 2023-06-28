@@ -1,3 +1,12 @@
+dialog {
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    backdrop-filter: blur(15px);
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(1px);
+}
+
 @media only screen and (min-width: 1024px) {
     .input_area {
         display: flex;

@@ -58,15 +58,20 @@ function createFoodElement(key, restaurant_name) {
     // delete button
     var deleteFoodButton = document.createElement("button");
     deleteFoodButton.innerText = "刪除";
+    deleteFoodButton.setAttribute("data-open-modal", "");
     deleteFoodButton.setAttribute("class", "delete");
-    deleteFoodButton.setAttribute("onclick", "deleteFood(\"" + key + "\")");
-    // deleteFoodButton.setAttribute("style", "width: 50%;");
+    deleteFoodButton.setAttribute("onclick", "showDeleteFoodDialog(\"" + key + "\")");
+
+    // append to accoording key
+    // modifyElement.append(deleteFoodDialog);
+    // modifyElement.append(deleteFoodButton);
 
     // modify button
     var editFoodButton = document.createElement("button");
     editFoodButton.innerText = "修改";
     editFoodButton.setAttribute("class", "modify");
     editFoodButton.setAttribute("onclick", "editFood(\"" + key + "\")");
+    // modifyElement.append(editFoodButton);
     // editFoodButton.setAttribute("style", "width: 50%;");
 
     // append delete and modify button to operation area
@@ -79,10 +84,60 @@ function createFoodElement(key, restaurant_name) {
     document.getElementById("food_data").appendChild(foodElement);
 }
 
+function showDeleteFoodDialog(foodId) {
+    // if had modal before, remove old one
+    var preModal = document.querySelector("[data-modal]");
+    if (preModal != null) {
+        preModal.remove();
+    }
+
+    // create delete food dialog
+    var deleteFoodDialog = document.createElement("dialog");
+    deleteFoodDialog.setAttribute("data-modal", "");
+    deleteFoodDialog.setAttribute("style", "border: none; border-radius: 12px;");
+
+    // set click backdrop to click
+    deleteFoodDialog.addEventListener('click', function (event) {
+        var rect = deleteFoodDialog.getBoundingClientRect();
+        var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height
+            && rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+        if (!isInDialog) {
+            deleteFoodDialog.close();
+        }
+    });
+
+    // delete food dialog
+    var deleteFoodDialogAlert = document.createElement("div");
+    deleteFoodDialogAlert.innerText = "確定要刪除嗎";
+    deleteFoodDialog.appendChild(deleteFoodDialogAlert);
+    // delete it!
+    var finalDeleteFoodButton = document.createElement("button");
+    finalDeleteFoodButton.innerText = "確定刪除";
+    finalDeleteFoodButton.setAttribute("data-close-modal", "");
+    finalDeleteFoodButton.setAttribute("onclick", "deleteFood(\"" + foodId + "\")");
+    deleteFoodDialog.appendChild(finalDeleteFoodButton);
+    // cancel
+    var finalCancelFoodButton = document.createElement("button");
+    finalCancelFoodButton.innerText = "取消";
+    finalCancelFoodButton.setAttribute("data-close-modal", "");
+    finalCancelFoodButton.setAttribute("onclick", "closeDeleteFoodDialog()");
+    deleteFoodDialog.appendChild(finalCancelFoodButton);
+
+    document.getElementById("food_data").appendChild(deleteFoodDialog);
+    var modal = document.querySelector("[data-modal]");
+    modal.showModal();
+}
+
+function closeDeleteFoodDialog() {
+    var modal = document.querySelector("[data-modal]");
+    modal.close();
+}
+
 function deleteFood(foodId) {
     // console.log(foodId);
     foodListRef.child(foodId).remove();
     document.getElementById(foodId).remove();
+    closeDeleteFoodDialog();
 }
 
 function editFood(foodId) {
@@ -95,8 +150,6 @@ function editFood(foodId) {
         var setFoodLabelTextarea = document.createElement("textarea");
         setFoodLabelTextarea.setAttribute("class", "label_textarea");
         setFoodLabelTextarea.setAttribute("style", "resize: none; border: none; padding: 0; font: caption; height:" + selectedFoodLabelDiv.offsetHeight + "px;");
-        console.log(selectedFoodLabelDiv.font);
-        console.log(selectedFoodLabelDiv.offsetHeight);
 
         // 將textarea的數值設為原本div的數值
         setFoodLabelTextarea.value = selectedFoodLabelDiv.innerText;
